@@ -21,9 +21,24 @@ void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Jump")
             anim.SetTrigger("Jump");
-        if(other.tag == "Fail")
-            anim.SetTrigger("Fail");
+        if(other.tag == "Fail"){
+anim.SetTrigger("Fail");
+OpenFailScreen();
+speed = 0;
+}
         if(other.tag == "Walk")
             anim.SetTrigger("Walk");
     }
+public GameObject ui;
+public GameObject failEkran;
+    
+    public void CloseTapToPlay()
+    {
+        ui.SetActive(false);
+anim.SetTrigger("Walk");
+speed=1;
+    }
+
+public void OpenFailScreen(){
+failEkran.SetActive(true);}
 }
